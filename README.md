@@ -17,7 +17,7 @@ This is an open source [LGPL 2.1](LICENSE.md) licensed project. It uses the foll
 
 - Cd the folder of this project and type `./build.sh` or `./build.sh -arch arm64` to checkout and build libraries needed.
 
-- Open `tests/TestVG.xcworkspace` in Xcode, then run the `TestView` demo app.
+- Open `TestVG.xcworkspace` in Xcode, then run the `TestView` demo app.
    
    - `TestView` target using `libTouchVG.a` does not support SVG display.
 

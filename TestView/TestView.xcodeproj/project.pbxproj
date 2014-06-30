@@ -60,7 +60,7 @@
 		AE3726ED18C9C53200B756C1 /* GiGraphView2.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GiGraphView2.mm; sourceTree = "<group>"; };
 		AE3B01141811064D0004AAC7 /* fonts.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = fonts.svg; sourceTree = "<group>"; };
 		AE3B011C18110A610004AAC7 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
-		AE4671551929DE310093D89F /* TouchVG.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TouchVG.bundle; path = ../../../vgios/TouchVG.bundle; sourceTree = "<group>"; };
+		AE4671551929DE310093D89F /* TouchVG.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TouchVG.bundle; path = ../../vgios/TouchVG.bundle; sourceTree = "<group>"; };
 		AE4E6F0416129337006CAA5C /* ViewFactory.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewFactory.mm; sourceTree = "<group>"; };
 		AE53750C177D26980050CC4F /* GiGraphView1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiGraphView1.h; sourceTree = "<group>"; };
 		AE53750D177D26980050CC4F /* GiGraphView1.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GiGraphView1.mm; sourceTree = "<group>"; };
@@ -389,15 +389,15 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
-					"../../../vgcore/core/include/**",
-					../../../vgios/TouchVG/include,
-					"../../../DemoCmds/core/**",
+					"../../vgcore/core/include/**",
+					../../vgios/include,
+					"../../DemoCmds/core/**",
 				);
 				INFOPLIST_FILE = ../Classes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(BUILT_PRODUCTS_DIR)",
-					../../output,
+					../output,
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
@@ -428,15 +428,15 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
-					"../../../vgcore/core/include/**",
-					../../../vgios/TouchVG/include,
-					"../../../DemoCmds/core/**",
+					"../../vgcore/core/include/**",
+					../../vgios/include,
+					"../../DemoCmds/core/**",
 				);
 				INFOPLIST_FILE = ../Classes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(BUILT_PRODUCTS_DIR)",
-					../../output,
+					../output,
 				);
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "";

@@ -22,7 +22,7 @@ iphoneos61=`xcodebuild -showsdks | grep -i iphoneos6.1`
 iphoneos51=`xcodebuild -showsdks | grep -i iphoneos5.1`
 iphoneos43=`xcodebuild -showsdks | grep -i iphoneos4.3`
 
-vgiospath=../vgios/TouchVG
+vgiospath=../vgios
 corepath=../vgcore/ios/TouchVGCore
 demopath=../DemoCmds/ios/DemoCmds
 SVG_path=../SVGKit
