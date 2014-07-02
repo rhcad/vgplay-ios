@@ -2,7 +2,7 @@
 //! \brief 实现iOS绘图视图类 GiGraphView2
 // Copyright (c) 2012-2013, https://github.com/rhcad/touchvg
 
-#import "GiGraphView1.h"
+#import "GiGraphView2.h"
 #import "GiViewHelper.h"
 #include "RandomShape.h"
 #include "gicoreview.h"

@@ -6,15 +6,7 @@ platform :ios, '6.0'
 
 xcodeproj 'TestView/TestView.xcodeproj'
 
-target 'TestView', :exclusive => true do
-    pod 'TouchVG', :podspec => 'https://raw.githubusercontent.com/touchvg/vgios/develop/podspec/TouchVG.podspec'
-    pod 'DemoCmds', :podspec => 'https://raw.githubusercontent.com/touchvg/DemoCmds/develop/ios/DemoCmds.podspec'
-end
-
-target 'TestView-SVG', :exclusive => true do
-    pod 'TouchVG-SVG', :podspec => 'https://raw.githubusercontent.com/touchvg/vgios/develop/podspec/TouchVG-SVG.podspec'
-    pod 'DemoCmds', :podspec => 'https://raw.githubusercontent.com/touchvg/DemoCmds/develop/ios/DemoCmds.podspec'
-end
+pod 'TouchVG', :podspec => 'https://raw.githubusercontent.com/touchvg/vgios/develop/podspec/TouchVG.podspec'
 
 pre_install do |installer|
   projfile = "TestView/TestView.xcodeproj/project.pbxproj"
