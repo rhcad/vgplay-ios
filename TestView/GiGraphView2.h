@@ -19,6 +19,10 @@ enum kTestFlags {
     kSwitchCmd  = 16,
     kRandShapes = 32,
     kRecord     = 64,
+    kPlayShapes = 64,
+    kProvider   = 128,
+    kKeyFrame   = 256,
+    kSprite     = 512,
 };
 
 //! iOS测试绘图视图类

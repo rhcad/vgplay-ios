@@ -4,6 +4,9 @@
 #import "GiGraphView2.h"
 #import "GiViewHelper.h"
 #import "ARCMacro.h"
+#import "GiPlayingHelper.h"
+#import "AnimatedPathView1.h"
+#import "BoardView.h"
 
 static UIViewController *_tmpController = nil;
 
@@ -83,20 +86,69 @@ static UIView* addGraphView(NSMutableArray *arr, NSUInteger &i, NSUInteger index
     return v;
 }
 
+
+static void addAnimatedPathView1(NSMutableArray *arr, NSUInteger &i, NSUInteger index,
+                                 NSString* title, CGRect frame, int type)
+{
+    AnimatedPathView1 *view = nil;
+    
+    if (!arr && index == i++) {
+        view = [[AnimatedPathView1 alloc]initWithFrame:frame];
+        
+        GiPaintView *v = [[GiPaintView alloc]initWithFrame:frame];
+        GiViewHelper *hlp = [GiViewHelper sharedInstance:v];
+        NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                              NSUserDomainMask, YES) objectAtIndex:0];
+        [hlp setImagePath:path];
+        [hlp loadFromFile:[GiGraphView2 lastFileName]];
+        if (hlp.shapeCount == 0) {
+            [hlp addShapesForTest];
+        }
+        
+        [view setupDrawingLayer:[GiPlayingHelper exportLayerTree:v hidden:YES]];
+        [view startAnimation];
+        [v RELEASE];
+    }
+    addView(arr, title, view);
+}
+
+static void addBoardView(NSMutableArray *arr, NSUInteger &i, NSUInteger index,
+                         NSString* title, CGRect frame)
+{
+    UIView *view = nil;
+    
+    if (!arr && index == i++) {
+        view = [[UIView alloc]initWithFrame:frame];
+        [BoardView createTwoViews:view];
+    }
+    addView(arr, title, view);
+    [view RELEASE];
+}
+
 static void gatherTestView(NSMutableArray *arr, NSUInteger index, CGRect frame)
 {
     NSUInteger i = 0;
     
     addGraphView(arr, i, index, @"Empty view", frame, -1);
-    addGraphView(arr, i, index, @"GiPaintView record switch command", frame, kRecord|kSwitchCmd);
+    addBoardView(arr, i, index, @"SharedBoard demo", frame);
+    addGraphView(arr, i, index, @"GiPaintView record switch cmd", frame, kRecord|kSwitchCmd);
     addGraphView(arr, i, index, @"GiPaintView record splines", frame, kRecord|kSplinesCmd);
     addGraphView(arr, i, index, @"GiPaintView record line", frame, kRecord|kLineCmd);
     addGraphView(arr, i, index, @"GiPaintView record randShapes splines",
                  frame, kRecord|kSplinesCmd|kRandShapes);
     addGraphView(arr, i, index, @"GiPaintView record randShapes line",
                  frame, kRecord|kLineCmd|kRandShapes);
+    addGraphView(arr, i, index, @"GiPaintView play", frame, kPlayShapes);
+    addGraphView(arr, i, index, @"GiPaintView provider", frame, kSplinesCmd|kProvider);
+    addGraphView(arr, i, index, @"GiPaintView provider record", frame, kSplinesCmd|kProvider|kRecord);
+    addGraphView(arr, i, index, @"GiPaintView keyframe animation", frame, kKeyFrame|kSplinesCmd);
+    addGraphView(arr, i, index, @"GiPaintView keyframe lines", frame, kKeyFrame|kLinesCmd);
+    addGraphView(arr, i, index, @"GiPaintView sprite splines", frame, kSprite|kSplinesCmd);
+    addGraphView(arr, i, index, @"GiPaintView sprite select", frame, kSprite|kSelectCmd);
+    addGraphView(arr, i, index, @"GiPaintView sprite record", frame, kSprite|kSelectCmd|kRecord);
     addGraphView(arr, i, index, @"GiPaintView add images", frame, kAddImages);
     addGraphView(arr, i, index, @"GiPaintView load images", frame, kLoadImages);
+    addAnimatedPathView1(arr, i, index, @"AnimatedPathView1", frame, 0);
 }
 
 void getTestViewTitles(NSMutableArray *arr)

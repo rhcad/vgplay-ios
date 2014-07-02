@@ -51,3 +51,10 @@ cp -R $vgiospath/build/Release-universal/include/TouchVG output
 mkdir -p output/TouchVGCore
 cp -R $corepath/build/Release-universal/libTouchVGCore.a output
 cp -R $corepath/build/Release-universal/include/TouchVGCore output
+
+if [ -f ../vgplay/ios/build.sh ] ; then
+    cd ../vgplay/ios; sh build.sh $1 $2; cd ../../vgplay-ios
+    mkdir -p vgplay
+    cp ../vgplay/ios/output/libTouchVGPlay.a vgplay
+    cp ../vgplay/ios/output/TouchVGPlay/*.h vgplay
+fi
