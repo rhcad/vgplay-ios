@@ -22,6 +22,7 @@ xcshareddata
 
 #do pod install yourself
 Pods/*
+*.lock
 
 #MSVS files
 *.ncb

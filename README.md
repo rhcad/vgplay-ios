@@ -15,16 +15,25 @@ This is an open source [LGPL 2.1](LICENSE.md) licensed project. It uses the foll
 
 ## How to Compile
 
+### Compile with CocoaPods
+
+Type `pod install` or `pod update --no-repo-update`, then open `TestView.xcworkspace` in Xcode and run the `TestView` demo app.
+
+The `TestView` demo app has two targets:
+
+- `TestView` target using `libTouchVG.a` does not support SVG display.
+- `TestView-SVG` target using `libTouchVG-SVG.a` and `SVGKit` can display SVG shapes.
+
+- To run on device, you may need to change the Bundle Identifier of the demo application, such as "com.yourcompany.TestView", and choose your own development certificate (Code Signing).
+
+### Compile without CocoaPods
+
+Alternatively, you can build as one of the following methods:
+
 - Cd the folder of this project and type `./build.sh` or `./build.sh -arch arm64` to checkout and build libraries needed.
 
-- Open `TestVG.xcworkspace` in Xcode, then run the `TestView` demo app.
-   
-   - `TestView` target using `libTouchVG.a` does not support SVG display.
+- Open `TestView.xcworkspace` in Xcode, then run the `TestView` demo app (Need to build each library while not type `./build.sh`).
 
-   - `TestView-SVG` target using `libTouchVG-SVG.a` and `SVGKit` can display SVG shapes.
-
-   - To run on device, you may need to change the Bundle Identifier of the demo application, such as "com.yourcompany.TestView", and choose your own development certificate (Code Signing).
- 
 ## Add more shapes and commands
 
 - Do not want to write C++ code? Please reference to [test/src/vgtest/testview/shape](test/src/vgtest/testview/shape) package to write your own shape and command classes.

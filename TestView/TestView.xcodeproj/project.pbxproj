@@ -341,7 +341,6 @@
 				);
 				PRODUCT_NAME = "TestView-SVG";
 				PUBLIC_HEADERS_FOLDER_PATH = "";
-				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
@@ -357,7 +356,6 @@
 				);
 				PRODUCT_NAME = "TestView-SVG";
 				PUBLIC_HEADERS_FOLDER_PATH = "";
-				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
@@ -384,7 +382,6 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -400,8 +397,6 @@
 					../output,
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -439,7 +434,6 @@
 					../output,
 				);
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -457,7 +451,6 @@
 				);
 				PRODUCT_NAME = TestView;
 				PUBLIC_HEADERS_FOLDER_PATH = "";
-				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
@@ -472,7 +465,6 @@
 				);
 				PRODUCT_NAME = TestView;
 				PUBLIC_HEADERS_FOLDER_PATH = "";
-				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
