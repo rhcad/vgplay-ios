@@ -1,15 +1,16 @@
-# TouchVG Demo for iOS
+# TouchVGPlay Demo for iOS
 
-This is a unit test and example project for [TouchVG](https://github.com/touchvg/vgios), which is a lightweight 2D vector drawing framework for iOS.
+This is a unit test and example project for TouchVGPlay, which is a lightweight vector shape playing and animation framework based on TouchVG for iOS.
 
 ![arch](http://touchvg.github.io/images/arch.svg)
 
 ## License
 
-This is an open source [LGPL 2.1](LICENSE.md) licensed project. It uses the following open source projects:
+This is an open source LGPL 2.1 licensed project. It uses the following open source projects:
 
 - [TouchVG](https://github.com/touchvg/vgios) (LGPL): Vector drawing framework for iOS.
 - [TouchVGCore](https://github.com/touchvg/vgcore) (LGPL): Cross-platform vector drawing libraries using C++.
+- TouchVGPlay (NOT open source yet): Shape playing and animation framework based on TouchVG.
 
 ## How to Compile
 
