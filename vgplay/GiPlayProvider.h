@@ -10,7 +10,7 @@
 struct GiFrame {
     id  view;               //!< GiPaintView
     int tag;                //!< ID setted by app
-    long shapes;            //!< GiPlaying::getBackShapesHandle(), MgShapes
+    long shapes;            //!< MgShapes
     int tick;               //!< played time in microsecond
     int lastTick;           //!< last frame's played time in microsecond
     id  extra;              //!< App's customized data

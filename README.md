@@ -12,6 +12,8 @@ API: [GiPlayingHelper](vgplay/GiPlayingHelper.h)
 - Spirit animation (animated GIF).
 - Export shapes to CAShapeLayer for animation on path.
 
+![](/Screenshot/sharedboard.gif) ![](/Screenshot/spirit.gif) ![](/Screenshot/anipath.gif) 
+
 ## How to Compile
 
 ### Compile with CocoaPods
