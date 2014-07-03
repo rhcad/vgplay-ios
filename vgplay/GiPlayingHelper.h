@@ -8,6 +8,9 @@
 @class CALayer;
 @protocol GiPlayProvider;
 
+typedef struct GiFrame GiFrame;
+typedef int (^GiFrameBlock)(GiFrame frame);
+
 extern const int GI_FRAMEFLAGS_DYN;
 
 //! 图形播放辅助类
@@ -33,6 +36,7 @@ extern const int GI_FRAMEFLAGS_DYN;
 - (int)playProviderCount;                   //!< 返回播放源的个数
 - (void)stopPlayProviders;                  //!< 标记所有播放源需要停止
 - (int)stopPlayProvider:(int)tag;           //!< 标记指定标识的播放源需要停止
+- (BOOL)addPlayProvider:(GiFrameBlock)b ended:(GiFrameBlock)e tag:(int)tag; //!< 添加一个播放源
 
 - (int)insertSpirit:(NSString *)format count:(int)count
               delay:(int)ms repeatCount:(int)rcount

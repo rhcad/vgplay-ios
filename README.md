@@ -1,6 +1,6 @@
 # TouchVGPlay Demo for iOS
 
-This is a unit test and example project for TouchVGPlay, which is a lightweight vector shape playing and animation framework based on TouchVG for iOS.
+This is a unit test and example project for TouchVGPlay, which is a lightweight vector shape playing and animation framework based on [TouchVG](https://github.com/touchvg/vgios) for iOS.
 
 API: [GiPlayingHelper](vgplay/GiPlayingHelper.h)
 
@@ -12,7 +12,9 @@ API: [GiPlayingHelper](vgplay/GiPlayingHelper.h)
 - Spirit animation (animated GIF).
 - Export shapes to CAShapeLayer for animation on path.
 
-![](/Screenshot/sharedboard.gif) ![](/Screenshot/spirit.gif) ![](/Screenshot/anipath.gif) 
+![](/Screenshot/spirit.gif) |
+![](/Screenshot/sharedboard.gif) |
+![](/Screenshot/anipath.gif) 
 
 ## How to Compile
 

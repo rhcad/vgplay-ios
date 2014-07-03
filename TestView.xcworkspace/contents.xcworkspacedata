@@ -5,12 +5,6 @@
       location = "group:../vgios/TouchVG.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:../DemoCmds/ios/DemoCmds/DemoCmds.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:../SVGKit/SVGKit-iOS.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:../vgcore/ios/TouchVGCore/TouchVGCore.xcodeproj">
    </FileRef>
    <FileRef

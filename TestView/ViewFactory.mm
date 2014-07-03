@@ -125,29 +125,42 @@ static void addBoardView(NSMutableArray *arr, NSUInteger &i, NSUInteger index,
     [view RELEASE];
 }
 
+void addAnimationLines(NSMutableArray *arr, NSUInteger &i, NSUInteger index,
+                       NSString* title, CGRect frame)
+{
+    GiGraphView2 *v = nil;
+    
+    if (!arr && index == i++) {
+        v = [[GiGraphView2 alloc]initWithFrame:frame withType:0];
+    }
+    addView(arr, title, v);
+    [v RELEASE];
+}
+
 static void gatherTestView(NSMutableArray *arr, NSUInteger index, CGRect frame)
 {
     NSUInteger i = 0;
     
     addGraphView(arr, i, index, @"Empty view", frame, -1);
     addBoardView(arr, i, index, @"SharedBoard demo", frame);
-    addGraphView(arr, i, index, @"GiPaintView record switch cmd", frame, kRecord|kSwitchCmd);
-    addGraphView(arr, i, index, @"GiPaintView record splines", frame, kRecord|kSplinesCmd);
-    addGraphView(arr, i, index, @"GiPaintView record line", frame, kRecord|kLineCmd);
-    addGraphView(arr, i, index, @"GiPaintView record randShapes splines",
+    addAnimationLines(arr, i, index, @"animation lines", frame);
+    addGraphView(arr, i, index, @"record switch cmd", frame, kRecord|kSwitchCmd);
+    addGraphView(arr, i, index, @"record splines", frame, kRecord|kSplinesCmd);
+    addGraphView(arr, i, index, @"record line", frame, kRecord|kLineCmd);
+    addGraphView(arr, i, index, @"record randShapes splines",
                  frame, kRecord|kSplinesCmd|kRandShapes);
-    addGraphView(arr, i, index, @"GiPaintView record randShapes line",
+    addGraphView(arr, i, index, @"record randShapes line",
                  frame, kRecord|kLineCmd|kRandShapes);
-    addGraphView(arr, i, index, @"GiPaintView play", frame, kPlayShapes);
-    addGraphView(arr, i, index, @"GiPaintView provider", frame, kSplinesCmd|kProvider);
-    addGraphView(arr, i, index, @"GiPaintView provider record", frame, kSplinesCmd|kProvider|kRecord);
-    addGraphView(arr, i, index, @"GiPaintView keyframe animation", frame, kKeyFrame|kSplinesCmd);
-    addGraphView(arr, i, index, @"GiPaintView keyframe lines", frame, kKeyFrame|kLinesCmd);
-    addGraphView(arr, i, index, @"GiPaintView spirit splines", frame, kSpirit|kSplinesCmd);
-    addGraphView(arr, i, index, @"GiPaintView spirit select", frame, kSpirit|kSelectCmd);
-    addGraphView(arr, i, index, @"GiPaintView spirit record", frame, kSpirit|kSelectCmd|kRecord);
-    addGraphView(arr, i, index, @"GiPaintView add images", frame, kAddImages);
-    addGraphView(arr, i, index, @"GiPaintView load images", frame, kLoadImages);
+    addGraphView(arr, i, index, @"play", frame, kPlayShapes);
+    addGraphView(arr, i, index, @"provider", frame, kSplinesCmd|kProvider);
+    addGraphView(arr, i, index, @"provider record", frame, kSplinesCmd|kProvider|kRecord);
+    addGraphView(arr, i, index, @"keyframe animation", frame, kKeyFrame|kSplinesCmd);
+    addGraphView(arr, i, index, @"keyframe lines", frame, kKeyFrame|kLinesCmd);
+    addGraphView(arr, i, index, @"spirit splines", frame, kSpirit|kSplinesCmd);
+    addGraphView(arr, i, index, @"spirit select", frame, kSpirit|kSelectCmd);
+    addGraphView(arr, i, index, @"spirit record", frame, kSpirit|kSelectCmd|kRecord);
+    addGraphView(arr, i, index, @"add images", frame, kAddImages);
+    addGraphView(arr, i, index, @"load images", frame, kLoadImages);
     addAnimatedPathView1(arr, i, index, @"AnimatedPathView1", frame, 0);
 }
 
