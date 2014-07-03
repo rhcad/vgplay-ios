@@ -92,10 +92,10 @@ static char _lastVgFile[256] = { 0 };
         //[_play addPlayProvider:self tag:0];
         [_play addPlayProvider:self tag:1];
     }
-    if (_testType & kSprite) {
+    if (_testType & kSpirit) {
         _play = [[GiPlayingHelper alloc]initWithView:self];
         [self setContextActionEnabled:(_testType & kSelectCmd) != 0];
-        [_play insertSprite:@"p3_b_%d.png" count:24 delay:100 repeatCount:0 tag:0];
+        [_play insertSpirit:@"bird_%d.png" count:16 delay:100 repeatCount:0 tag:0];
         if ((_testType & kCmdMask) == kSplinesCmd) {
             helper.command = @"splines";
         }
@@ -223,9 +223,9 @@ static char _lastVgFile[256] = { 0 };
         return [super pressHandler:sender];
     }
     if (sender.state == UIGestureRecognizerStateBegan) {
-        if (_testType & kSprite) {
-            [_play insertSprite:@"p3_b_%d.png"
-                          count:24
+        if (_testType & kSpirit) {
+            [_play insertSpirit:@"bird_%d.png"
+                          count:16
                           delay:100 - [_play playProviderCount] * 10
                     repeatCount:0
                             tag:[_play playProviderCount]

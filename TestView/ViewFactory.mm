@@ -143,9 +143,9 @@ static void gatherTestView(NSMutableArray *arr, NSUInteger index, CGRect frame)
     addGraphView(arr, i, index, @"GiPaintView provider record", frame, kSplinesCmd|kProvider|kRecord);
     addGraphView(arr, i, index, @"GiPaintView keyframe animation", frame, kKeyFrame|kSplinesCmd);
     addGraphView(arr, i, index, @"GiPaintView keyframe lines", frame, kKeyFrame|kLinesCmd);
-    addGraphView(arr, i, index, @"GiPaintView sprite splines", frame, kSprite|kSplinesCmd);
-    addGraphView(arr, i, index, @"GiPaintView sprite select", frame, kSprite|kSelectCmd);
-    addGraphView(arr, i, index, @"GiPaintView sprite record", frame, kSprite|kSelectCmd|kRecord);
+    addGraphView(arr, i, index, @"GiPaintView spirit splines", frame, kSpirit|kSplinesCmd);
+    addGraphView(arr, i, index, @"GiPaintView spirit select", frame, kSpirit|kSelectCmd);
+    addGraphView(arr, i, index, @"GiPaintView spirit record", frame, kSpirit|kSelectCmd|kRecord);
     addGraphView(arr, i, index, @"GiPaintView add images", frame, kAddImages);
     addGraphView(arr, i, index, @"GiPaintView load images", frame, kLoadImages);
     addAnimatedPathView1(arr, i, index, @"AnimatedPathView1", frame, 0);

@@ -22,7 +22,7 @@ enum kTestFlags {
     kPlayShapes = 64,
     kProvider   = 128,
     kKeyFrame   = 256,
-    kSprite     = 512,
+    kSpirit     = 512,
 };
 
 //! iOS测试绘图视图类
