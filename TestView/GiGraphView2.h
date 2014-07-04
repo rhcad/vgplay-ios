@@ -3,9 +3,11 @@
 // Copyright (c) 2012-2013, https://github.com/rhcad/touchvg
 
 #import "GiPaintView.h"
+#import "ARCMacro.h"
 
 class ViewAdapter1;
 class GiCoreView;
+@class GiPlayingHelper;
 
 enum kTestFlags {
     kSplinesCmd = 1,
@@ -21,6 +23,7 @@ enum kTestFlags {
     kProvider   = 128,
     kKeyFrame   = 256,
     kSpirit     = 512,
+    kProviderEx = 1024,
 };
 
 //! iOS测试绘图视图类
@@ -32,6 +35,8 @@ enum kTestFlags {
     UIButton    *_pauseBtn;
     UIGestureRecognizer *_recognizer;
 }
+
+@property(nonatomic, STRONG) GiPlayingHelper *play;
 
 - (id)initWithFrame:(CGRect)frame withType:(int)type;
 + (NSString *)lastFileName;

@@ -8,7 +8,6 @@
 #import "GiPlayProvider.h"
 #include "RandomShape.h"
 #include "gicoreview.h"
-#import "ARCMacro.h"
 
 static char _lastVgFile[256] = { 0 };
 
@@ -17,7 +16,6 @@ static char _lastVgFile[256] = { 0 };
 @property(nonatomic, STRONG) NSMutableArray  *layers;
 @property(nonatomic, STRONG) CAShapeLayer *shapeLayer;
 @property(nonatomic, STRONG) CALayer *curLayer;
-@property(nonatomic, STRONG) GiPlayingHelper *play;
 
 @end
 
@@ -70,18 +68,22 @@ static char _lastVgFile[256] = { 0 };
             _play = [[GiPlayingHelper alloc]initWithView:self];
             [_play startPlay:[path stringByAppendingPathComponent:@"record"]];
         }
-        if (_testType & kProvider) {
+        else if (_testType & kProvider) {
             _play = [[GiPlayingHelper alloc]initWithView:self];
             //[_play addPlayProvider:self tag:0];
             [_play addPlayProvider:self tag:1];
         }
-        if (_testType & kSpirit) {
+        else if (_testType & kSpirit) {
             _play = [[GiPlayingHelper alloc]initWithView:self];
             [self setContextActionEnabled:(_testType & kSelectCmd) != 0];
             [_play insertSpirit:@"bird_%d.png" count:16 delay:100 repeatCount:0 tag:0];
             if ((_testType & kCmdMask) == kSplinesCmd) {
                 helper.command = @"splines";
             }
+        }
+        else if (_testType & kProviderEx) {
+            _play = [[GiPlayingHelper alloc]initWithView:self];
+            helper.command = @"splines";
         }
     }
     return self;

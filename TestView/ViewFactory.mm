@@ -112,13 +112,16 @@ static void addBoardView(NSMutableArray *arr, NSUInteger &i, NSUInteger index,
     [view RELEASE];
 }
 
+void addAnimatedLinesDemo(GiPlayingHelper *play);
+
 void addAnimationLines(NSMutableArray *arr, NSUInteger &i, NSUInteger index,
                        NSString* title, CGRect frame)
 {
     GiGraphView2 *v = nil;
     
     if (!arr && index == i++) {
-        v = [[GiGraphView2 alloc]initWithFrame:frame withType:0];
+        v = [[GiGraphView2 alloc]initWithFrame:frame withType:kProviderEx];
+        addAnimatedLinesDemo(v.play);
     }
     addView(arr, title, v);
     [v RELEASE];
@@ -130,7 +133,7 @@ static void gatherTestView(NSMutableArray *arr, NSUInteger index, CGRect frame)
     
     addGraphView(arr, i, index, @"Empty view", frame, -1);
     addBoardView(arr, i, index, @"SharedBoard demo", frame);
-    addAnimationLines(arr, i, index, @"animation lines", frame);
+    addAnimationLines(arr, i, index, @"Animated lines", frame);
     addGraphView(arr, i, index, @"record switch cmd", frame, kRecord|kSwitchCmd);
     addGraphView(arr, i, index, @"record splines", frame, kRecord|kSplinesCmd);
     addGraphView(arr, i, index, @"record line", frame, kRecord|kLineCmd);
