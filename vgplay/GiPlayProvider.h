@@ -8,13 +8,14 @@
 
 //! Animation frame info.
 struct GiFrame {
-    id  view;               //!< GiPaintView
-    int tag;                //!< ID setted by app
-    long shapes;            //!< MgShapes
-    int tick;               //!< played time in microsecond
-    int lastTick;           //!< last frame's played time in microsecond
-    id  extra;              //!< App's customized data
-    long backShapes;        //!< MgCoreView::backShapes(), MgShapes
+    id      view;               //!< GiPaintView
+    int     tag;                //!< ID setted by app
+    long    shapes;             //!< MgShapes
+    int     tick;               //!< played time in microsecond
+    int     lastTick;           //!< last frame's played time in microsecond
+    int     index;              //!< zero based frame index
+    id      extra;              //!< App's customized object
+    long    backShapes;         //!< MgCoreView::backShapes(), MgShapes
 };
 typedef struct GiFrame GiFrame;
 

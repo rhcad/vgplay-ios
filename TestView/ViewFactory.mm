@@ -25,8 +25,7 @@ static void addView(NSMutableArray *arr, NSString* title, UIView* view)
 static void testGraphView(GiPaintView *v, int type)
 {
     GiViewHelper *hlp = [GiViewHelper sharedInstance:v];
-    NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
-                                                          NSUserDomainMask, YES) objectAtIndex:0];
+    
     if (type & kRandShapes) {
         [hlp addShapesForTest];
     }
@@ -55,18 +54,6 @@ static void testGraphView(GiPaintView *v, int type)
             hlp.command = @"lines";
             hlp.lineStyle = GILineStyleDot;
             hlp.strokeWidth = 5;
-            break;
-            
-        case kAddImages:
-            [hlp insertPNGFromResource:@"app72"];
-            [hlp insertPNGFromResource:@"app57" center:CGPointMake(200, 100)];
-            [hlp insertImageFromFile:[path stringByAppendingPathComponent:@"page0.png"]];
-            break;
-            
-        case kLoadImages:
-            [hlp setImagePath:path];
-            [hlp loadFromFile:[GiGraphView2 lastFileName]];
-            hlp.command = @"select";
             break;
     }
 }
@@ -159,8 +146,6 @@ static void gatherTestView(NSMutableArray *arr, NSUInteger index, CGRect frame)
     addGraphView(arr, i, index, @"spirit splines", frame, kSpirit|kSplinesCmd);
     addGraphView(arr, i, index, @"spirit select", frame, kSpirit|kSelectCmd);
     addGraphView(arr, i, index, @"spirit record", frame, kSpirit|kSelectCmd|kRecord);
-    addGraphView(arr, i, index, @"add images", frame, kAddImages);
-    addGraphView(arr, i, index, @"load images", frame, kLoadImages);
     addAnimatedPathView1(arr, i, index, @"AnimatedPathView1", frame, 0);
 }
 

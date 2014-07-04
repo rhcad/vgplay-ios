@@ -60,6 +60,29 @@ static char _lastVgFile[256] = { 0 };
     self = [super initWithFrame:frame];
     if (self) {
         _testType = type;
+        
+        GiViewHelper *helper = [GiViewHelper sharedInstance:self];
+        NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                              NSUserDomainMask, YES) objectAtIndex:0];
+        
+        if (_testType == kPlayShapes) {
+            [_pauseBtn addTarget:self action:@selector(onPause) forControlEvents:UIControlEventTouchUpInside];
+            _play = [[GiPlayingHelper alloc]initWithView:self];
+            [_play startPlay:[path stringByAppendingPathComponent:@"record"]];
+        }
+        if (_testType & kProvider) {
+            _play = [[GiPlayingHelper alloc]initWithView:self];
+            //[_play addPlayProvider:self tag:0];
+            [_play addPlayProvider:self tag:1];
+        }
+        if (_testType & kSpirit) {
+            _play = [[GiPlayingHelper alloc]initWithView:self];
+            [self setContextActionEnabled:(_testType & kSelectCmd) != 0];
+            [_play insertSpirit:@"bird_%d.png" count:16 delay:100 repeatCount:0 tag:0];
+            if ((_testType & kCmdMask) == kSplinesCmd) {
+                helper.command = @"splines";
+            }
+        }
     }
     return self;
 }
@@ -76,30 +99,12 @@ static char _lastVgFile[256] = { 0 };
         [self addSubview:_pauseBtn];
         [_pauseBtn RELEASE];
     }
-    if (_testType == kPlayShapes) {
-        [_pauseBtn addTarget:self action:@selector(onPause) forControlEvents:UIControlEventTouchUpInside];
-        _play = [[GiPlayingHelper alloc]initWithView:self];
-        [_play startPlay:[path stringByAppendingPathComponent:@"record"]];
-    }
-    else if (_testType & kRecord) {
+    if (_testType != kRecord && (_testType & kRecord)) {
         [helper startRecord:[path stringByAppendingPathComponent:@"record"]];
     }
     [helper startUndoRecord:[path stringByAppendingPathComponent:@"undo"]];
     [self addUndoRedoButton];
     
-    if (_testType & kProvider) {
-        _play = [[GiPlayingHelper alloc]initWithView:self];
-        //[_play addPlayProvider:self tag:0];
-        [_play addPlayProvider:self tag:1];
-    }
-    if (_testType & kSpirit) {
-        _play = [[GiPlayingHelper alloc]initWithView:self];
-        [self setContextActionEnabled:(_testType & kSelectCmd) != 0];
-        [_play insertSpirit:@"bird_%d.png" count:16 delay:100 repeatCount:0 tag:0];
-        if ((_testType & kCmdMask) == kSplinesCmd) {
-            helper.command = @"splines";
-        }
-    }
     if (_testType & kCmdMask) {
         for (UIView *v = self.superview; v; v = v.superview) {
             if (v.backgroundColor && v.backgroundColor != [UIColor clearColor]) {
@@ -174,7 +179,7 @@ static char _lastVgFile[256] = { 0 };
         GiCoreView* cv = GiCoreView::createView(NULL, 0);
         NSString* f = [GiViewHelper addExtension:[GiGraphView2 lastFileName] :@".vg"];
         
-        ret = cv->loadFromFile([f UTF8String]);
+        ret = cv->loadFromFile([f UTF8String]) || cv->addShapesForTest(100);
         shapes->copyShapes(MgShapes::fromHandle(cv->backShapes()), false);
         cv->release();
         
@@ -214,6 +219,7 @@ static char _lastVgFile[256] = { 0 };
 
 - (void)onProvideEnded:(GiFrame)frame {
     NSLog(@"onPlayEnded tag=%d", frame.tag);
+    [frame.extra RELEASE];
 }
 
 - (BOOL)pressHandler:(UILongPressGestureRecognizer *)sender {

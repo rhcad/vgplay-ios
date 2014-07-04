@@ -13,8 +13,6 @@ enum kTestFlags {
     kSelectLoad = 3,
     kLineCmd    = 4,
     kLinesCmd   = 5,
-    kAddImages  = 7,
-    kLoadImages = 8,
     kCmdMask    = 15,
     kSwitchCmd  = 16,
     kRandShapes = 32,
