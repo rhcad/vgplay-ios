@@ -113,6 +113,7 @@ static void addBoardView(NSMutableArray *arr, NSUInteger &i, NSUInteger index,
 }
 
 void addAnimatedLinesDemo(GiPlayingHelper *play);
+void addAnimatedBezierDemo(GiPlayingHelper *play);
 
 void addAnimationLines(NSMutableArray *arr, NSUInteger &i, NSUInteger index,
                        NSString* title, CGRect frame)
@@ -122,6 +123,7 @@ void addAnimationLines(NSMutableArray *arr, NSUInteger &i, NSUInteger index,
     if (!arr && index == i++) {
         v = [[GiGraphView2 alloc]initWithFrame:frame withType:kProviderEx];
         addAnimatedLinesDemo(v.play);
+        addAnimatedBezierDemo(v.play);
     }
     addView(arr, title, v);
     [v RELEASE];

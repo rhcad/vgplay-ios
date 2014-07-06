@@ -27,6 +27,10 @@ extern const int GI_FRAMEFLAGS_DYN;
 
 - (BOOL)startPlay:(NSString *)path;         //!< 开始播放指定的目录下录制的图形，在主线程用
 - (void)stopPlay;                           //!< 停止播放，在主线程用
+- (BOOL)isPaused;                           //!< 是否已暂停
+- (BOOL)playPause;                          //!< 暂停播放
+- (BOOL)playResume;                         //!< 继续播放
+- (long)getPlayTicks;                       //!< 得到已播放的毫秒数
 
 - (BOOL)startSyncPlay:(int)cid path:(NSString *)path;   //!< 开始同步播放，待播放的图形将缓存在指定的目录
 - (void)applySyncPlayFrame:(int)cid index:(int)index;   //!< 同步播放一帧，此帧(*.vgr)已缓存到指定的目录

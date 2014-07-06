@@ -150,7 +150,7 @@ static char _lastVgFile[256] = { 0 };
 }
 
 - (void)onPlayFrame:(id)view {
-    long ticks = [[GiViewHelper sharedInstance:self] getPlayTicks];
+    long ticks = [_play getPlayTicks];
     NSString *text = [NSString stringWithFormat:@"%03d %2ld:%02ld.%03ld",
                       _frameIndex++, ticks / 60000, ticks / 1000 % 60, ticks % 1000];
     [_pauseBtn setTitle:text forState: UIControlStateNormal];
@@ -166,10 +166,10 @@ static char _lastVgFile[256] = { 0 };
 }
 
 - (void)onPause {
-    if ([[GiViewHelper sharedInstance:self] isPaused]) {
-        [[GiViewHelper sharedInstance] playResume];
+    if ([_play isPaused]) {
+        [_play playResume];
     } else {
-        [[GiViewHelper sharedInstance] playPause];
+        [_play playPause];
     }
 }
 
