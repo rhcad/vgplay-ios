@@ -10,7 +10,7 @@
 #import "GiViewHelper.h"
 #include "mgshapes.h"
 #include "mgpathsp.h"
-#include "mgshapet.h"
+#include "mgspfactory.h"
 
 static Point2d d2m(float x, float y, GiViewHelper *helper)
 {
@@ -28,17 +28,21 @@ void addAnimatedBezierDemo(GiPlayingHelper *play)
         
         if (shapes->getShapeCount() == 0) {
             GiViewHelper *helper = [GiViewHelper sharedInstance:frame.view];
-            MgShapeT<MgPathShape> path;
+            MgShape *newsp = [helper shapeFactory]->createShape(MgPathShape::Type());
+            GiPath& path = ((MgPathShape *)newsp->shape())->path();
             
-            path._context.setLineWidth(-5, true);
+            GiContext ctx(newsp->context());
+            ctx.setLineWidth(-5, true);
+            newsp->setContext(ctx);
+            
             pt1 = d2m(10, 50, helper);
             pt2 = d2m(100, 400, helper);
             pt3 = d2m(300, 400, helper);
             pt4 = d2m(300, 50, helper);
             
-            path._shape.path().moveTo(pt1);
-            path._shape.path().bezierTo(pt2, pt3, pt4);
-            shapes->addShape(path);
+            path.moveTo(pt1);
+            path.bezierTo(pt2, pt3, pt4);
+            shapes->addShapeDirect(newsp);
         }
         
         if (frame.tick < frame.lastTick + 10) {

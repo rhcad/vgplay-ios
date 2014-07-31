@@ -10,7 +10,7 @@
 #import "GiViewHelper.h"
 #include "mgshapes.h"
 #include "mgbasicsp.h"
-#include "mgshapet.h"
+#include "mgspfactory.h"
 
 static Point2d d2m(float x, float y, GiViewHelper *helper)
 {
@@ -29,16 +29,21 @@ void addAnimatedLinesDemo(GiPlayingHelper *play)
         
         if (!pathsp) {
             GiViewHelper *helper = [GiViewHelper sharedInstance:frame.view];
-            MgShapeT<MgLines> lines;
+            MgShape *newsp = [helper shapeFactory]->createShape(MgLines::Type());
+            MgLines* lines = (MgLines*)newsp->shape();
             
-            lines._context.setLineWidth(-10, true);
-            lines._shape.addPoint(d2m(10, 10, helper));
-            lines._shape.addPoint(d2m(300, 10, helper));
-            lines._shape.addPoint(d2m(10, 300, helper));
-            lines._shape.addPoint(d2m(300, 300, helper));
-            lines._shape.addPoint(d2m(10, 10, helper));
+            GiContext ctx(newsp->context());
+            ctx.setLineWidth(-10, true);
+            newsp->setContext(ctx);
             
-            pathsp = shapes->addShape(lines)->cloneShape();
+            lines->addPoint(d2m(10, 10, helper));
+            lines->addPoint(d2m(300, 10, helper));
+            lines->addPoint(d2m(10, 300, helper));
+            lines->addPoint(d2m(300, 300, helper));
+            lines->addPoint(d2m(10, 10, helper));
+            
+            shapes->addShapeDirect(newsp);
+            pathsp = newsp->cloneShape();
             step = fabsf([helper displayRectToModel:CGRectMake(0, 0, 1, 1)].size.width);
         }
         
