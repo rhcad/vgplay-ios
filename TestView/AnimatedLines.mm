@@ -9,8 +9,8 @@
 #import "GiPlayProvider.h"
 #import "GiViewHelper.h"
 #include "mgshapes.h"
-#include "mgbasicsp.h"
 #include "mgspfactory.h"
+#include "mglines.h"
 
 static Point2d d2m(float x, float y, GiViewHelper *helper)
 {

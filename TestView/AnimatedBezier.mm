@@ -29,7 +29,7 @@ void addAnimatedBezierDemo(GiPlayingHelper *play)
         if (shapes->getShapeCount() == 0) {
             GiViewHelper *helper = [GiViewHelper sharedInstance:frame.view];
             MgShape *newsp = [helper shapeFactory]->createShape(MgPathShape::Type());
-            GiPath& path = ((MgPathShape *)newsp->shape())->path();
+            MgPath& path = ((MgPathShape *)newsp->shape())->path();
             
             GiContext ctx(newsp->context());
             ctx.setLineWidth(-5, true);
@@ -50,7 +50,7 @@ void addAnimatedBezierDemo(GiPlayingHelper *play)
         }
         
         MgShape* newsp = shapes->getLastShape()->cloneShape();
-        GiPath& path = ((MgPathShape*)newsp->shape())->path();
+        MgPath& path = ((MgPathShape*)newsp->shape())->path();
         
         Point2d pts[12] = { pt1, pt2, pt3, pt4 };
         mgcurv::splitBezier(pts, t, pts + 4, pts + 8);
