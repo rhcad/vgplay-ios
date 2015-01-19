@@ -1,6 +1,6 @@
 //! \file GiPlayDelegate.h
 //! \brief 定义图形播放通知协议 GiPlayDelegate
-// Copyright (c) 2014 Zhang Yungui, https://github.com/touchvg/vgplay
+// Copyright (c) 2014 Zhang Yungui, https://github.com/rhcad/vgplay
 
 #import "GiPaintViewDelegate.h"
 

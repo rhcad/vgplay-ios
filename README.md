@@ -1,6 +1,6 @@
 # TouchVGPlay Demo for iOS
 
-This is a unit test and example project for TouchVGPlay, which is a lightweight vector shape playing and animation framework based on [TouchVG](https://github.com/touchvg/vgios) for iOS.
+This is a unit test and example project for TouchVGPlay, which is a lightweight vector shape playing and animation framework based on [vgios](https://github.com/rhcad/vgios) for iOS.
 
 API: [GiPlayingHelper](vgplay/GiPlayingHelper.h)
 
@@ -38,12 +38,10 @@ Alternatively, you can build as one of the following methods:
 Contributors and sponsors are welcome. You may translate, commit issues or pull requests on this Github site.
 To contribute, please follow the branching model outlined here: [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/).
 
-Welcome to the Chinese QQ group `192093613` to discuss and share.
-
 ## License
 
 This is an open source LGPL 2.1 licensed project. It uses the following open source projects:
 
-- [TouchVG](https://github.com/touchvg/vgios) (LGPL): Vector drawing framework for iOS.
-- [TouchVGCore](https://github.com/touchvg/vgcore) (LGPL): Cross-platform vector drawing libraries using C++.
+- [vgios](https://github.com/rhcad/vgios) (LGPL): Vector drawing framework for iOS.
+- [vgcore](https://github.com/rhcad/vgcore) (LGPL): Cross-platform vector drawing libraries using C++.
 - TouchVGPlay (NOT open source yet): Shape playing and animation framework based on TouchVG.

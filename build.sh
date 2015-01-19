@@ -4,10 +4,10 @@
 # Type './build.sh clean' to remove object files.
 
 if [ ! -f ../vgcore/ios/build.sh ] ; then
-    git clone https://github.com/touchvg/vgcore ../vgcore
+    git clone https://github.com/rhcad/vgcore ../vgcore
 fi
 if [ ! -f ../vgios/build.sh ] ; then
-    git clone https://github.com/touchvg/vgios ../vgios
+    git clone https://github.com/rhcad/vgios ../vgios
 fi
 
 iphoneos71=`xcodebuild -showsdks | grep -i iphoneos7.1`

@@ -2,7 +2,7 @@
 //  AnimatedLines.mm
 //
 //  Created by Zhang Yungui on 14-7-4.
-//  Copyright (c) 2014, https://github.com/touchvg/vgplay-ios
+//  Copyright (c) 2014, https://github.com/rhcad/vgplay-ios
 //
 
 #import "GiPlayingHelper.h"
