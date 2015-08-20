@@ -25,7 +25,7 @@ static char _lastVgFile[256] = { 0 };
 @synthesize play = _play;
 
 - (void)dealloc {
-    [_play RELEASE];
+    [_play RELEASEOBJ];
     [super DEALLOC];
 }
 
@@ -99,7 +99,7 @@ static char _lastVgFile[256] = { 0 };
         _pauseBtn.backgroundColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.8];
         [_pauseBtn setTitleColor:[UIColor blackColor] forState: UIControlStateNormal];
         [self addSubview:_pauseBtn];
-        [_pauseBtn RELEASE];
+        [_pauseBtn RELEASEOBJ];
     }
     if (_testType != kRecord && (_testType & kRecord)) {
         [helper startRecord:[path stringByAppendingPathComponent:@"record"]];
@@ -135,7 +135,7 @@ static char _lastVgFile[256] = { 0 };
     [_undoBtn setTitleColor:[UIColor blackColor] forState: UIControlStateHighlighted];
     [_undoBtn addTarget:self action:@selector(undo) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_undoBtn];
-    [_undoBtn RELEASE];
+    [_undoBtn RELEASEOBJ];
     
     _redoBtn = [[UIButton alloc]initWithFrame:CGRectNull];
     _redoBtn.showsTouchWhenHighlighted = YES;
@@ -144,7 +144,7 @@ static char _lastVgFile[256] = { 0 };
     [_redoBtn setTitleColor:[UIColor blackColor] forState: UIControlStateHighlighted];
     [_redoBtn addTarget:self action:@selector(redo) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_redoBtn];
-    [_redoBtn RELEASE];
+    [_redoBtn RELEASEOBJ];
     
     [self layoutButtons];
 }
@@ -221,7 +221,7 @@ static char _lastVgFile[256] = { 0 };
 
 - (void)onProvideEnded:(GiFrame)frame {
     NSLog(@"onPlayEnded tag=%d", frame.tag);
-    [frame.extra RELEASE];
+    [frame.extra RELEASEOBJ];
 }
 
 - (BOOL)pressHandler:(UILongPressGestureRecognizer *)sender {
@@ -305,7 +305,7 @@ static char _lastVgFile[256] = { 0 };
     if (!self.curLayer) {
         return;
     }
-    nowLayer = [curLayer.sublayers lastObject];
+    nowLayer = (CAShapeLayer *)[curLayer.sublayers lastObject];
     self.shapeLayer.strokeColor = nowLayer.strokeColor;
     self.shapeLayer.fillColor = nowLayer.fillColor;
     self.shapeLayer.lineWidth = nowLayer.lineWidth;
@@ -319,7 +319,7 @@ static char _lastVgFile[256] = { 0 };
         self.shapeLayer = nil;
         return;
     }
-    nextLayer = [curLayer.sublayers lastObject];
+    nextLayer = (CAShapeLayer *)[curLayer.sublayers lastObject];
     
     CABasicAnimation* pathAnim = [CABasicAnimation animationWithKeyPath: @"path"];
     pathAnim.fromValue = (__bridge id)nowLayer.path;

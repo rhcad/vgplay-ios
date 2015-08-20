@@ -44,7 +44,7 @@ void addAnimatedLinesDemo(GiPlayingHelper *play)
             
             shapes->addShapeDirect(newsp);
             pathsp = newsp->cloneShape();
-            step = fabsf([helper displayRectToModel:CGRectMake(0, 0, 1, 1)].size.width);
+            step = fabs([helper displayRectToModel:CGRectMake(0, 0, 1, 1)].size.width);
         }
         
         if (frame.tick < frame.lastTick + 20) {

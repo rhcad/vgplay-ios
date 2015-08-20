@@ -53,7 +53,7 @@
     
     CALayer *shapeLayer = [self.drawingLayer.sublayers objectAtIndex:shapeIndex];
     
-    _pathLayer = [shapeLayer.sublayers objectAtIndex:0];
+    _pathLayer = (CAShapeLayer *)[shapeLayer.sublayers objectAtIndex:0];
     [_pathLayer addSublayer:self.penLayer];
     
     CABasicAnimation *pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];

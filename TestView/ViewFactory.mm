@@ -68,7 +68,7 @@ static UIView* addGraphView(NSMutableArray *arr, NSUInteger &i, NSUInteger index
         testGraphView(v, type);
     }
     addView(arr, title, v);
-    [v RELEASE];
+    [v RELEASEOBJ];
     
     return v;
 }
@@ -94,7 +94,7 @@ static void addAnimatedPathView1(NSMutableArray *arr, NSUInteger &i, NSUInteger 
         
         [view setupDrawingLayer:[GiPlayingHelper exportLayerTree:v hidden:YES]];
         [view startAnimation];
-        [v RELEASE];
+        [v RELEASEOBJ];
     }
     addView(arr, title, view);
 }
@@ -109,7 +109,7 @@ static void addBoardView(NSMutableArray *arr, NSUInteger &i, NSUInteger index,
         [BoardView createTwoViews:view];
     }
     addView(arr, title, view);
-    [view RELEASE];
+    [view RELEASEOBJ];
 }
 
 void addAnimatedLinesDemo(GiPlayingHelper *play);
@@ -126,7 +126,7 @@ void addAnimationLines(NSMutableArray *arr, NSUInteger &i, NSUInteger index,
         addAnimatedBezierDemo(v.play);
     }
     addView(arr, title, v);
-    [v RELEASE];
+    [v RELEASEOBJ];
 }
 
 static void gatherTestView(NSMutableArray *arr, NSUInteger index, CGRect frame)
