@@ -2,7 +2,7 @@
 //  AnimatedLines.mm
 //
 //  Created by Zhang Yungui on 14-7-4.
-//  Copyright (c) 2014, https://github.com/touchvg/vgplay-ios
+//  Copyright (c) 2014, https://github.com/rhcad/vgplay-ios
 //
 
 #import "GiPlayingHelper.h"
@@ -44,7 +44,7 @@ void addAnimatedLinesDemo(GiPlayingHelper *play)
             
             shapes->addShapeDirect(newsp);
             pathsp = newsp->cloneShape();
-            step = fabsf([helper displayRectToModel:CGRectMake(0, 0, 1, 1)].size.width);
+            step = fabs([helper displayRectToModel:CGRectMake(0, 0, 1, 1)].size.width);
         }
         
         if (frame.tick < frame.lastTick + 20) {

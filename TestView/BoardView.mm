@@ -33,21 +33,21 @@
     view1.lineColor = [UIColor greenColor];
     view1.cid = 1;
     [view addSubview:view1];
-    [view1 RELEASE];
+    [view1 RELEASEOBJ];
     
     rect.origin.y += rect.size.height;
     BoardView *view2 = [[BoardView alloc]initWithFrame:rect];
     view2.lineColor = [UIColor redColor];
     view2.cid = 2;
     [view addSubview:view2];
-    [view2 RELEASE];
+    [view2 RELEASEOBJ];
     
     view1.receiver = view2;
     view2.receiver = view1;
 }
 
 - (void)dealloc {
-    [_play RELEASE];
+    [_play RELEASEOBJ];
     [super DEALLOC];
 }
 
@@ -105,7 +105,7 @@
     [btn setTitleColor:[UIColor blackColor] forState: UIControlStateNormal];
     [btn addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:btn];
-    [btn RELEASE];
+    [btn RELEASEOBJ];
 }
 
 - (void)layoutSubviews {

@@ -1,6 +1,6 @@
 //! \file GiPlayingHelper.h
 //! \brief 实现矢量图形播放类 GiPlayingHelper
-// Copyright (c) 2014 Zhang Yungui, https://github.com/touchvg/vgplay
+// Copyright (c) 2014 Zhang Yungui, https://github.com/rhcad/vgplay
 
 #import <UIKit/UIKit.h>
 
