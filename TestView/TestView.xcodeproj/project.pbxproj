@@ -23,9 +23,11 @@
 		023E61E01964F98B001E5BCA /* bird_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 023E61D01964F98B001E5BCA /* bird_2@2x.png */; };
 		023E61E11964F98B001E5BCA /* bird_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 023E61D11964F98B001E5BCA /* bird_1@2x.png */; };
 		023E61E21964F98B001E5BCA /* bird_0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 023E61D21964F98B001E5BCA /* bird_0@2x.png */; };
-		027FEA931963BB7D005DBE8E /* libTouchVGPlay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 027FEA911963BB7D005DBE8E /* libTouchVGPlay.a */; };
 		027FEA981963BF05005DBE8E /* AnimatedPathView1.mm in Sources */ = {isa = PBXBuildFile; fileRef = 027FEA951963BF05005DBE8E /* AnimatedPathView1.mm */; };
 		027FEA991963BF05005DBE8E /* BoardView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 027FEA971963BF05005DBE8E /* BoardView.mm */; };
+		0295F2011CCDF4830090C272 /* libTouchVG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0295F1FD1CCDF4830090C272 /* libTouchVG.a */; };
+		0295F2021CCDF4830090C272 /* libTouchVGCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0295F1FE1CCDF4830090C272 /* libTouchVGCore.a */; };
+		0295F2041CCDF4830090C272 /* libTouchVGPlay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0295F2001CCDF4830090C272 /* libTouchVGPlay.a */; };
 		02A4F36F196645B20054046E /* AnimatedLines.mm in Sources */ = {isa = PBXBuildFile; fileRef = 02A4F36E196645B20054046E /* AnimatedLines.mm */; };
 		02FE60C51969231200011325 /* AnimatedBezier.mm in Sources */ = {isa = PBXBuildFile; fileRef = 02FE60C41969231200011325 /* AnimatedBezier.mm */; };
 		AE03795E181FB31E0049931F /* pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = AE03795D181FB31E0049931F /* pencil.png */; };
@@ -63,14 +65,13 @@
 		023E61D01964F98B001E5BCA /* bird_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bird_2@2x.png"; sourceTree = "<group>"; };
 		023E61D11964F98B001E5BCA /* bird_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bird_1@2x.png"; sourceTree = "<group>"; };
 		023E61D21964F98B001E5BCA /* bird_0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bird_0@2x.png"; sourceTree = "<group>"; };
-		027FEA8E1963BB7D005DBE8E /* GiPlayDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiPlayDelegate.h; sourceTree = "<group>"; };
-		027FEA8F1963BB7D005DBE8E /* GiPlayingHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiPlayingHelper.h; sourceTree = "<group>"; };
-		027FEA901963BB7D005DBE8E /* GiPlayProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiPlayProvider.h; sourceTree = "<group>"; };
-		027FEA911963BB7D005DBE8E /* libTouchVGPlay.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTouchVGPlay.a; sourceTree = "<group>"; };
 		027FEA941963BF05005DBE8E /* AnimatedPathView1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatedPathView1.h; sourceTree = "<group>"; };
 		027FEA951963BF05005DBE8E /* AnimatedPathView1.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AnimatedPathView1.mm; sourceTree = "<group>"; };
 		027FEA961963BF05005DBE8E /* BoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardView.h; sourceTree = "<group>"; };
 		027FEA971963BF05005DBE8E /* BoardView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BoardView.mm; sourceTree = "<group>"; };
+		0295F1FD1CCDF4830090C272 /* libTouchVG.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTouchVG.a; sourceTree = "<group>"; };
+		0295F1FE1CCDF4830090C272 /* libTouchVGCore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTouchVGCore.a; sourceTree = "<group>"; };
+		0295F2001CCDF4830090C272 /* libTouchVGPlay.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTouchVGPlay.a; sourceTree = "<group>"; };
 		02A4F36E196645B20054046E /* AnimatedLines.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AnimatedLines.mm; sourceTree = "<group>"; };
 		02FE60C41969231200011325 /* AnimatedBezier.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AnimatedBezier.mm; sourceTree = "<group>"; };
 		AE03795D181FB31E0049931F /* pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pencil.png; sourceTree = "<group>"; };
@@ -105,10 +106,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				027FEA931963BB7D005DBE8E /* libTouchVGPlay.a in Frameworks */,
 				AEF2D52B160964BA00DDB7F2 /* UIKit.framework in Frameworks */,
 				AE815F351718EDCB006BC607 /* QuartzCore.framework in Frameworks */,
 				AEF2D52F160964BA00DDB7F2 /* CoreGraphics.framework in Frameworks */,
+				0295F2041CCDF4830090C272 /* libTouchVGPlay.a in Frameworks */,
+				0295F2021CCDF4830090C272 /* libTouchVGCore.a in Frameworks */,
+				0295F2011CCDF4830090C272 /* libTouchVG.a in Frameworks */,
 				AEF2D52D160964BA00DDB7F2 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,21 +142,21 @@
 			path = bird;
 			sourceTree = "<group>";
 		};
-		027FEA8C1963BB7D005DBE8E /* vgplay */ = {
+		0295F1F91CCDF4830090C272 /* output */ = {
 			isa = PBXGroup;
 			children = (
-				027FEA8F1963BB7D005DBE8E /* GiPlayingHelper.h */,
-				027FEA8E1963BB7D005DBE8E /* GiPlayDelegate.h */,
-				027FEA901963BB7D005DBE8E /* GiPlayProvider.h */,
-				027FEA911963BB7D005DBE8E /* libTouchVGPlay.a */,
+				0295F1FD1CCDF4830090C272 /* libTouchVG.a */,
+				0295F1FE1CCDF4830090C272 /* libTouchVGCore.a */,
+				0295F2001CCDF4830090C272 /* libTouchVGPlay.a */,
 			);
-			name = vgplay;
-			path = ../vgplay;
+			name = output;
+			path = ../output;
 			sourceTree = "<group>";
 		};
 		AE0762FD160AAE3A00518207 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				0295F1F91CCDF4830090C272 /* output */,
 				027FEA941963BF05005DBE8E /* AnimatedPathView1.h */,
 				027FEA951963BF05005DBE8E /* AnimatedPathView1.mm */,
 				027FEA961963BF05005DBE8E /* BoardView.h */,
@@ -171,7 +174,6 @@
 			isa = PBXGroup;
 			children = (
 				AE0762FD160AAE3A00518207 /* Test */,
-				027FEA8C1963BB7D005DBE8E /* vgplay */,
 				AEF2D530160964BA00DDB7F2 /* Classes */,
 				AEF2D56C1609B67200DDB7F2 /* Resources */,
 				AEF2D529160964BA00DDB7F2 /* Frameworks */,
@@ -368,13 +370,13 @@
 				HEADER_SEARCH_PATHS = (
 					"../../vgcore/core/include/**",
 					../../vgios/include,
+					../../vgplay/ios/include,
 				);
 				INFOPLIST_FILE = ../Classes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(BUILT_PRODUCTS_DIR)",
 					../output,
-					../vgplay,
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "ad3e58c6-ee59-4c74-9c64-765d7e96adda";
@@ -406,13 +408,13 @@
 				HEADER_SEARCH_PATHS = (
 					"../../vgcore/core/include/**",
 					../../vgios/include,
+					../../vgplay/ios/include,
 				);
 				INFOPLIST_FILE = ../Classes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(BUILT_PRODUCTS_DIR)",
 					../output,
-					../vgplay,
 				);
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "ad3e58c6-ee59-4c74-9c64-765d7e96adda";
@@ -426,10 +428,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
-				OTHER_LDFLAGS = (
-					"-lTouchVGCore",
-					"-lTouchVG",
-				);
 				PRODUCT_NAME = TestVGPlay;
 				PUBLIC_HEADERS_FOLDER_PATH = "";
 			};
@@ -439,10 +437,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
-				OTHER_LDFLAGS = (
-					"-lTouchVGCore",
-					"-lTouchVG",
-				);
 				PRODUCT_NAME = TestVGPlay;
 				PUBLIC_HEADERS_FOLDER_PATH = "";
 			};
